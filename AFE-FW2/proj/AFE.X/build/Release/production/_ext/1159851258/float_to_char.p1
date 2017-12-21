@@ -1,0 +1,124 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"11 ../../src_com/float_to_char.c
+[v _float_to_char `(v ~T0 @X0 1 ef3`f`*uc`i ]
+"12
+{
+[; ;float_to_char.c: 11: void float_to_char( float f, char *buf, int dplaces )
+[; ;float_to_char.c: 12: {
+[e :U _float_to_char ]
+"11
+[v _f `f ~T0 @X0 1 r1 ]
+[v _buf `*uc ~T0 @X0 1 r2 ]
+[v _dplaces `i ~T0 @X0 1 r3 ]
+"12
+[f ]
+"13
+[v _pos `i ~T0 @X0 1 a ]
+[; ;float_to_char.c: 13: int pos=0,ix,dp,num,loop;
+[e = _pos -> 0 `i ]
+[v _ix `i ~T0 @X0 1 a ]
+[v _dp `i ~T0 @X0 1 a ]
+[v _num `i ~T0 @X0 1 a ]
+[v _loop `i ~T0 @X0 1 a ]
+[; ;float_to_char.c: 15: if (f<0)
+"15
+[e $ ! < _f -> -> 0 `i `f 2  ]
+[; ;float_to_char.c: 16: {
+"16
+{
+[; ;float_to_char.c: 17: buf[pos++]='-';
+"17
+[e = *U + _buf * -> ++ _pos -> 1 `i `x -> -> # *U _buf `i `x -> -> 45 `ui `uc ]
+[; ;float_to_char.c: 18: f = -f;
+"18
+[e = _f -U _f ]
+"19
+}
+[e :U 2 ]
+[; ;float_to_char.c: 19: }
+[; ;float_to_char.c: 20: dp=0;
+"20
+[e = _dp -> 0 `i ]
+[; ;float_to_char.c: 22: loop = dplaces + 2;
+"22
+[e = _loop + _dplaces -> 2 `i ]
+[; ;float_to_char.c: 24: while (f>=10.0)
+"24
+[e $U 3  ]
+[e :U 4 ]
+[; ;float_to_char.c: 25: {
+"25
+{
+[; ;float_to_char.c: 26: f=f/10.0;
+"26
+[e = _f -> / -> _f `d .10.0 `f ]
+[; ;float_to_char.c: 27: dp++;
+"27
+[e ++ _dp -> 1 `i ]
+[; ;float_to_char.c: 28: loop++;
+"28
+[e ++ _loop -> 1 `i ]
+"29
+}
+[e :U 3 ]
+"24
+[e $ >= -> _f `d .10.0 4  ]
+[e :U 5 ]
+[; ;float_to_char.c: 29: }
+[; ;float_to_char.c: 31: for (ix=1;ix<loop;ix++)
+"31
+{
+[e = _ix -> 1 `i ]
+[e $U 9  ]
+"32
+[e :U 6 ]
+[; ;float_to_char.c: 32: {
+{
+[; ;float_to_char.c: 33: num = (int) f;
+"33
+[e = _num -> _f `i ]
+[; ;float_to_char.c: 34: f=f-num;
+"34
+[e = _f - _f -> _num `f ]
+[; ;float_to_char.c: 35: if (num>9)
+"35
+[e $ ! > _num -> 9 `i 10  ]
+[; ;float_to_char.c: 36: buf[pos++]='#';
+"36
+[e = *U + _buf * -> ++ _pos -> 1 `i `x -> -> # *U _buf `i `x -> -> 35 `ui `uc ]
+[e $U 11  ]
+"37
+[e :U 10 ]
+[; ;float_to_char.c: 37: else
+[; ;float_to_char.c: 38: buf[pos++]= '0'+num;
+"38
+[e = *U + _buf * -> ++ _pos -> 1 `i `x -> -> # *U _buf `i `x -> + -> 48 `ui -> _num `ui `uc ]
+[e :U 11 ]
+[; ;float_to_char.c: 39: if (dp==0) buf[pos++]='.';
+"39
+[e $ ! == _dp -> 0 `i 12  ]
+[e = *U + _buf * -> ++ _pos -> 1 `i `x -> -> # *U _buf `i `x -> -> 46 `ui `uc ]
+[e :U 12 ]
+[; ;float_to_char.c: 40: f=f*10.0;
+"40
+[e = _f -> * -> _f `d .10.0 `f ]
+[; ;float_to_char.c: 41: dp--;
+"41
+[e -- _dp -> 1 `i ]
+"42
+}
+"31
+[e ++ _ix -> 1 `i ]
+[e :U 9 ]
+[e $ < _ix _loop 6  ]
+[e :U 7 ]
+"42
+}
+[; ;float_to_char.c: 42: }
+[; ;float_to_char.c: 44: buf[pos] = '\0';
+"44
+[e = *U + _buf * -> _pos `x -> -> # *U _buf `i `x -> -> 0 `ui `uc ]
+[; ;float_to_char.c: 45: }
+"45
+[e :UE 1 ]
+}

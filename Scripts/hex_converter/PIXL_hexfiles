@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "Creating a versioned PIXL hex file"
+python ../../../Scripts/hex_converter/PIXL-versioning.py ../../PIXL-RS485/proj/PROFile.X/dist/Release/production/PROFile.X.production.hex ../../proj/PROFile.X/dist/Release/production/PIXL

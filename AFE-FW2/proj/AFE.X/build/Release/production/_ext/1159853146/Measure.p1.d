@@ -1,0 +1,19 @@
+ build/Release/production/_ext/1159853146/Measure.d  \
+ build/Release/production/_ext/1159853146/Measure.p1:  \
+ ../../src_app/Measure.c  \
+../../mcc_generated_files/i2c.h  \
+../../mcc_generated_files/fvr.h  \
+../../src_app/PortDef.h  \
+../../mcc_generated_files/cmp2.h  \
+../../mcc_generated_files/mcc.h  \
+../../inc/ComTypeDefs.h  \
+../../src_com/TimeDelay.h  \
+../../mcc_generated_files/memory.h  \
+../../src_com/Monitor.h  \
+../../mcc_generated_files/interrupt_manager.h  \
+../../mcc_generated_files/eusart.h  \
+../../mcc_generated_files/pin_manager.h  \
+../../src_app/tmr0.h  \
+../../src_com/Console.h  \
+../../src_app/Measure.h  \
+../../src_app/Tick.h 

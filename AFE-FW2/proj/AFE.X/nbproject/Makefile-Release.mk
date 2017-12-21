@@ -1,0 +1,444 @@
+#
+# Generated Makefile - do not edit!
+#
+# Edit the Makefile in the project folder instead (../Makefile). Each target
+# has a -pre and a -post target defined where you can add customized code.
+#
+# This makefile implements configuration specific macros and targets.
+
+
+# Include project Makefile
+ifeq "${IGNORE_LOCAL}" "TRUE"
+# do not include local makefile. User is passing all local related variables already
+else
+include Makefile
+# Include makefile containing local settings
+ifeq "$(wildcard nbproject/Makefile-local-Release.mk)" "nbproject/Makefile-local-Release.mk"
+include nbproject/Makefile-local-Release.mk
+endif
+endif
+
+# Environment
+MKDIR=mkdir -p
+RM=rm -f 
+MV=mv 
+CP=cp 
+
+# Macros
+CND_CONF=Release
+ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+IMAGE_TYPE=debug
+OUTPUT_SUFFIX=elf
+DEBUGGABLE_SUFFIX=elf
+FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/AFE.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+else
+IMAGE_TYPE=production
+OUTPUT_SUFFIX=hex
+DEBUGGABLE_SUFFIX=elf
+FINAL_IMAGE=dist/${CND_CONF}/${IMAGE_TYPE}/AFE.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+endif
+
+ifeq ($(COMPARE_BUILD), true)
+COMPARISON_BUILD=--mafrlcsj
+else
+COMPARISON_BUILD=
+endif
+
+ifdef SUB_IMAGE_ADDRESS
+
+else
+SUB_IMAGE_ADDRESS_COMMAND=
+endif
+
+# Object Directory
+OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
+
+# Distribution Directory
+DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
+
+# Source Files Quoted if spaced
+SOURCEFILES_QUOTED_IF_SPACED=../../mcc_generated_files/cmp2.c ../../mcc_generated_files/eusart.c ../../mcc_generated_files/fvr.c ../../mcc_generated_files/interrupt_manager.c ../../mcc_generated_files/mcc.c ../../mcc_generated_files/memory.c ../../mcc_generated_files/pin_manager.c ../../src_app/MainLoop.c ../../src_app/Tick.c ../../src_app/Measure.c ../../src_app/tmr0.c ../../src_app/SendSensorData.c ../../src_com/float_to_char.c ../../src_com/Monitor.c ../../src_com/NvmData.c ../../src_com/Console.c ../../../Common/crc.c ../../src_com/TimeDelay.c
+
+# Object Files Quoted if spaced
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1050474357/cmp2.p1 ${OBJECTDIR}/_ext/1050474357/eusart.p1 ${OBJECTDIR}/_ext/1050474357/fvr.p1 ${OBJECTDIR}/_ext/1050474357/interrupt_manager.p1 ${OBJECTDIR}/_ext/1050474357/mcc.p1 ${OBJECTDIR}/_ext/1050474357/memory.p1 ${OBJECTDIR}/_ext/1050474357/pin_manager.p1 ${OBJECTDIR}/_ext/1159853146/MainLoop.p1 ${OBJECTDIR}/_ext/1159853146/Tick.p1 ${OBJECTDIR}/_ext/1159853146/Measure.p1 ${OBJECTDIR}/_ext/1159853146/tmr0.p1 ${OBJECTDIR}/_ext/1159853146/SendSensorData.p1 ${OBJECTDIR}/_ext/1159851258/float_to_char.p1 ${OBJECTDIR}/_ext/1159851258/Monitor.p1 ${OBJECTDIR}/_ext/1159851258/NvmData.p1 ${OBJECTDIR}/_ext/1159851258/Console.p1 ${OBJECTDIR}/_ext/8382566/crc.p1 ${OBJECTDIR}/_ext/1159851258/TimeDelay.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1050474357/cmp2.p1.d ${OBJECTDIR}/_ext/1050474357/eusart.p1.d ${OBJECTDIR}/_ext/1050474357/fvr.p1.d ${OBJECTDIR}/_ext/1050474357/interrupt_manager.p1.d ${OBJECTDIR}/_ext/1050474357/mcc.p1.d ${OBJECTDIR}/_ext/1050474357/memory.p1.d ${OBJECTDIR}/_ext/1050474357/pin_manager.p1.d ${OBJECTDIR}/_ext/1159853146/MainLoop.p1.d ${OBJECTDIR}/_ext/1159853146/Tick.p1.d ${OBJECTDIR}/_ext/1159853146/Measure.p1.d ${OBJECTDIR}/_ext/1159853146/tmr0.p1.d ${OBJECTDIR}/_ext/1159853146/SendSensorData.p1.d ${OBJECTDIR}/_ext/1159851258/float_to_char.p1.d ${OBJECTDIR}/_ext/1159851258/Monitor.p1.d ${OBJECTDIR}/_ext/1159851258/NvmData.p1.d ${OBJECTDIR}/_ext/1159851258/Console.p1.d ${OBJECTDIR}/_ext/8382566/crc.p1.d ${OBJECTDIR}/_ext/1159851258/TimeDelay.p1.d
+
+# Object Files
+OBJECTFILES=${OBJECTDIR}/_ext/1050474357/cmp2.p1 ${OBJECTDIR}/_ext/1050474357/eusart.p1 ${OBJECTDIR}/_ext/1050474357/fvr.p1 ${OBJECTDIR}/_ext/1050474357/interrupt_manager.p1 ${OBJECTDIR}/_ext/1050474357/mcc.p1 ${OBJECTDIR}/_ext/1050474357/memory.p1 ${OBJECTDIR}/_ext/1050474357/pin_manager.p1 ${OBJECTDIR}/_ext/1159853146/MainLoop.p1 ${OBJECTDIR}/_ext/1159853146/Tick.p1 ${OBJECTDIR}/_ext/1159853146/Measure.p1 ${OBJECTDIR}/_ext/1159853146/tmr0.p1 ${OBJECTDIR}/_ext/1159853146/SendSensorData.p1 ${OBJECTDIR}/_ext/1159851258/float_to_char.p1 ${OBJECTDIR}/_ext/1159851258/Monitor.p1 ${OBJECTDIR}/_ext/1159851258/NvmData.p1 ${OBJECTDIR}/_ext/1159851258/Console.p1 ${OBJECTDIR}/_ext/8382566/crc.p1 ${OBJECTDIR}/_ext/1159851258/TimeDelay.p1
+
+# Source Files
+SOURCEFILES=../../mcc_generated_files/cmp2.c ../../mcc_generated_files/eusart.c ../../mcc_generated_files/fvr.c ../../mcc_generated_files/interrupt_manager.c ../../mcc_generated_files/mcc.c ../../mcc_generated_files/memory.c ../../mcc_generated_files/pin_manager.c ../../src_app/MainLoop.c ../../src_app/Tick.c ../../src_app/Measure.c ../../src_app/tmr0.c ../../src_app/SendSensorData.c ../../src_com/float_to_char.c ../../src_com/Monitor.c ../../src_com/NvmData.c ../../src_com/Console.c ../../../Common/crc.c ../../src_com/TimeDelay.c
+
+
+CFLAGS=
+ASFLAGS=
+LDLIBSOPTIONS=
+
+############# Tool locations ##########################################
+# If you copy a project from one host to another, the path where the  #
+# compiler is installed may be different.                             #
+# If you open this project with MPLAB X in the new host, this         #
+# makefile will be regenerated and the paths will be corrected.       #
+#######################################################################
+# fixDeps replaces a bunch of sed/cat/printf statements that slow down the build
+FIXDEPS=fixDeps
+
+# The following macros may be used in the pre and post step lines
+Device=PIC18LF14K22
+ProjectDir=/Users/williamejennings/farmx_firmware/AFE-FW2/proj/AFE.X
+ConfName=Release
+ImagePath=dist/Release/${IMAGE_TYPE}/AFE.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+ImageDir=dist/Release/${IMAGE_TYPE}
+ImageName=AFE.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+IsDebug="true"
+else
+IsDebug="false"
+endif
+
+.build-conf:  ${BUILD_SUBPROJECTS}
+ifneq ($(INFORMATION_MESSAGE), )
+	@echo $(INFORMATION_MESSAGE)
+endif
+	${MAKE}  -f nbproject/Makefile-Release.mk dist/${CND_CONF}/${IMAGE_TYPE}/AFE.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+	@echo "--------------------------------------"
+	@echo "User defined post-build step: [../../../Scripts/hex_converter/DAFE_hexfiles]"
+	@../../../Scripts/hex_converter/DAFE_hexfiles
+	@echo "--------------------------------------"
+
+MP_PROCESSOR_OPTION=18LF14K22
+# ------------------------------------------------------------------------------------
+# Rules for buildStep: compile
+ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/_ext/1050474357/cmp2.p1: ../../mcc_generated_files/cmp2.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1050474357" 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/cmp2.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/cmp2.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1050474357/cmp2.p1  ../../mcc_generated_files/cmp2.c 
+	@-${MV} ${OBJECTDIR}/_ext/1050474357/cmp2.d ${OBJECTDIR}/_ext/1050474357/cmp2.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1050474357/cmp2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1050474357/eusart.p1: ../../mcc_generated_files/eusart.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1050474357" 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/eusart.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/eusart.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1050474357/eusart.p1  ../../mcc_generated_files/eusart.c 
+	@-${MV} ${OBJECTDIR}/_ext/1050474357/eusart.d ${OBJECTDIR}/_ext/1050474357/eusart.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1050474357/eusart.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1050474357/fvr.p1: ../../mcc_generated_files/fvr.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1050474357" 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/fvr.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/fvr.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1050474357/fvr.p1  ../../mcc_generated_files/fvr.c 
+	@-${MV} ${OBJECTDIR}/_ext/1050474357/fvr.d ${OBJECTDIR}/_ext/1050474357/fvr.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1050474357/fvr.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1050474357/interrupt_manager.p1: ../../mcc_generated_files/interrupt_manager.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1050474357" 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/interrupt_manager.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/interrupt_manager.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1050474357/interrupt_manager.p1  ../../mcc_generated_files/interrupt_manager.c 
+	@-${MV} ${OBJECTDIR}/_ext/1050474357/interrupt_manager.d ${OBJECTDIR}/_ext/1050474357/interrupt_manager.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1050474357/interrupt_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1050474357/mcc.p1: ../../mcc_generated_files/mcc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1050474357" 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/mcc.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/mcc.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1050474357/mcc.p1  ../../mcc_generated_files/mcc.c 
+	@-${MV} ${OBJECTDIR}/_ext/1050474357/mcc.d ${OBJECTDIR}/_ext/1050474357/mcc.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1050474357/mcc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1050474357/memory.p1: ../../mcc_generated_files/memory.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1050474357" 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/memory.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/memory.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1050474357/memory.p1  ../../mcc_generated_files/memory.c 
+	@-${MV} ${OBJECTDIR}/_ext/1050474357/memory.d ${OBJECTDIR}/_ext/1050474357/memory.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1050474357/memory.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1050474357/pin_manager.p1: ../../mcc_generated_files/pin_manager.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1050474357" 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/pin_manager.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/pin_manager.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1050474357/pin_manager.p1  ../../mcc_generated_files/pin_manager.c 
+	@-${MV} ${OBJECTDIR}/_ext/1050474357/pin_manager.d ${OBJECTDIR}/_ext/1050474357/pin_manager.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1050474357/pin_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159853146/MainLoop.p1: ../../src_app/MainLoop.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159853146" 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/MainLoop.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/MainLoop.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159853146/MainLoop.p1  ../../src_app/MainLoop.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159853146/MainLoop.d ${OBJECTDIR}/_ext/1159853146/MainLoop.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159853146/MainLoop.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159853146/Tick.p1: ../../src_app/Tick.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159853146" 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/Tick.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/Tick.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159853146/Tick.p1  ../../src_app/Tick.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159853146/Tick.d ${OBJECTDIR}/_ext/1159853146/Tick.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159853146/Tick.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159853146/Measure.p1: ../../src_app/Measure.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159853146" 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/Measure.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/Measure.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159853146/Measure.p1  ../../src_app/Measure.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159853146/Measure.d ${OBJECTDIR}/_ext/1159853146/Measure.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159853146/Measure.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159853146/tmr0.p1: ../../src_app/tmr0.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159853146" 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/tmr0.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/tmr0.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159853146/tmr0.p1  ../../src_app/tmr0.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159853146/tmr0.d ${OBJECTDIR}/_ext/1159853146/tmr0.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159853146/tmr0.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159853146/SendSensorData.p1: ../../src_app/SendSensorData.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159853146" 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/SendSensorData.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/SendSensorData.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159853146/SendSensorData.p1  ../../src_app/SendSensorData.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159853146/SendSensorData.d ${OBJECTDIR}/_ext/1159853146/SendSensorData.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159853146/SendSensorData.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159851258/float_to_char.p1: ../../src_com/float_to_char.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159851258" 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/float_to_char.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/float_to_char.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159851258/float_to_char.p1  ../../src_com/float_to_char.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159851258/float_to_char.d ${OBJECTDIR}/_ext/1159851258/float_to_char.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159851258/float_to_char.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159851258/Monitor.p1: ../../src_com/Monitor.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159851258" 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/Monitor.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/Monitor.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159851258/Monitor.p1  ../../src_com/Monitor.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159851258/Monitor.d ${OBJECTDIR}/_ext/1159851258/Monitor.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159851258/Monitor.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159851258/NvmData.p1: ../../src_com/NvmData.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159851258" 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/NvmData.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/NvmData.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159851258/NvmData.p1  ../../src_com/NvmData.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159851258/NvmData.d ${OBJECTDIR}/_ext/1159851258/NvmData.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159851258/NvmData.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159851258/Console.p1: ../../src_com/Console.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159851258" 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/Console.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/Console.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159851258/Console.p1  ../../src_com/Console.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159851258/Console.d ${OBJECTDIR}/_ext/1159851258/Console.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159851258/Console.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/8382566/crc.p1: ../../../Common/crc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/8382566" 
+	@${RM} ${OBJECTDIR}/_ext/8382566/crc.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/8382566/crc.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/8382566/crc.p1  ../../../Common/crc.c 
+	@-${MV} ${OBJECTDIR}/_ext/8382566/crc.d ${OBJECTDIR}/_ext/8382566/crc.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/8382566/crc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159851258/TimeDelay.p1: ../../src_com/TimeDelay.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159851258" 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/TimeDelay.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/TimeDelay.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159851258/TimeDelay.p1  ../../src_com/TimeDelay.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159851258/TimeDelay.d ${OBJECTDIR}/_ext/1159851258/TimeDelay.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159851258/TimeDelay.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+else
+${OBJECTDIR}/_ext/1050474357/cmp2.p1: ../../mcc_generated_files/cmp2.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1050474357" 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/cmp2.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/cmp2.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1050474357/cmp2.p1  ../../mcc_generated_files/cmp2.c 
+	@-${MV} ${OBJECTDIR}/_ext/1050474357/cmp2.d ${OBJECTDIR}/_ext/1050474357/cmp2.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1050474357/cmp2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1050474357/eusart.p1: ../../mcc_generated_files/eusart.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1050474357" 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/eusart.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/eusart.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1050474357/eusart.p1  ../../mcc_generated_files/eusart.c 
+	@-${MV} ${OBJECTDIR}/_ext/1050474357/eusart.d ${OBJECTDIR}/_ext/1050474357/eusart.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1050474357/eusart.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1050474357/fvr.p1: ../../mcc_generated_files/fvr.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1050474357" 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/fvr.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/fvr.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1050474357/fvr.p1  ../../mcc_generated_files/fvr.c 
+	@-${MV} ${OBJECTDIR}/_ext/1050474357/fvr.d ${OBJECTDIR}/_ext/1050474357/fvr.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1050474357/fvr.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1050474357/interrupt_manager.p1: ../../mcc_generated_files/interrupt_manager.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1050474357" 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/interrupt_manager.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/interrupt_manager.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1050474357/interrupt_manager.p1  ../../mcc_generated_files/interrupt_manager.c 
+	@-${MV} ${OBJECTDIR}/_ext/1050474357/interrupt_manager.d ${OBJECTDIR}/_ext/1050474357/interrupt_manager.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1050474357/interrupt_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1050474357/mcc.p1: ../../mcc_generated_files/mcc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1050474357" 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/mcc.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/mcc.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1050474357/mcc.p1  ../../mcc_generated_files/mcc.c 
+	@-${MV} ${OBJECTDIR}/_ext/1050474357/mcc.d ${OBJECTDIR}/_ext/1050474357/mcc.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1050474357/mcc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1050474357/memory.p1: ../../mcc_generated_files/memory.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1050474357" 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/memory.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/memory.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1050474357/memory.p1  ../../mcc_generated_files/memory.c 
+	@-${MV} ${OBJECTDIR}/_ext/1050474357/memory.d ${OBJECTDIR}/_ext/1050474357/memory.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1050474357/memory.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1050474357/pin_manager.p1: ../../mcc_generated_files/pin_manager.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1050474357" 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/pin_manager.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1050474357/pin_manager.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1050474357/pin_manager.p1  ../../mcc_generated_files/pin_manager.c 
+	@-${MV} ${OBJECTDIR}/_ext/1050474357/pin_manager.d ${OBJECTDIR}/_ext/1050474357/pin_manager.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1050474357/pin_manager.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159853146/MainLoop.p1: ../../src_app/MainLoop.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159853146" 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/MainLoop.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/MainLoop.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159853146/MainLoop.p1  ../../src_app/MainLoop.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159853146/MainLoop.d ${OBJECTDIR}/_ext/1159853146/MainLoop.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159853146/MainLoop.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159853146/Tick.p1: ../../src_app/Tick.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159853146" 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/Tick.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/Tick.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159853146/Tick.p1  ../../src_app/Tick.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159853146/Tick.d ${OBJECTDIR}/_ext/1159853146/Tick.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159853146/Tick.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159853146/Measure.p1: ../../src_app/Measure.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159853146" 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/Measure.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/Measure.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159853146/Measure.p1  ../../src_app/Measure.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159853146/Measure.d ${OBJECTDIR}/_ext/1159853146/Measure.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159853146/Measure.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159853146/tmr0.p1: ../../src_app/tmr0.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159853146" 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/tmr0.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/tmr0.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159853146/tmr0.p1  ../../src_app/tmr0.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159853146/tmr0.d ${OBJECTDIR}/_ext/1159853146/tmr0.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159853146/tmr0.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159853146/SendSensorData.p1: ../../src_app/SendSensorData.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159853146" 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/SendSensorData.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159853146/SendSensorData.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159853146/SendSensorData.p1  ../../src_app/SendSensorData.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159853146/SendSensorData.d ${OBJECTDIR}/_ext/1159853146/SendSensorData.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159853146/SendSensorData.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159851258/float_to_char.p1: ../../src_com/float_to_char.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159851258" 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/float_to_char.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/float_to_char.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159851258/float_to_char.p1  ../../src_com/float_to_char.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159851258/float_to_char.d ${OBJECTDIR}/_ext/1159851258/float_to_char.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159851258/float_to_char.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159851258/Monitor.p1: ../../src_com/Monitor.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159851258" 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/Monitor.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/Monitor.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159851258/Monitor.p1  ../../src_com/Monitor.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159851258/Monitor.d ${OBJECTDIR}/_ext/1159851258/Monitor.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159851258/Monitor.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159851258/NvmData.p1: ../../src_com/NvmData.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159851258" 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/NvmData.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/NvmData.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159851258/NvmData.p1  ../../src_com/NvmData.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159851258/NvmData.d ${OBJECTDIR}/_ext/1159851258/NvmData.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159851258/NvmData.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159851258/Console.p1: ../../src_com/Console.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159851258" 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/Console.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/Console.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159851258/Console.p1  ../../src_com/Console.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159851258/Console.d ${OBJECTDIR}/_ext/1159851258/Console.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159851258/Console.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/8382566/crc.p1: ../../../Common/crc.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/8382566" 
+	@${RM} ${OBJECTDIR}/_ext/8382566/crc.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/8382566/crc.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/8382566/crc.p1  ../../../Common/crc.c 
+	@-${MV} ${OBJECTDIR}/_ext/8382566/crc.d ${OBJECTDIR}/_ext/8382566/crc.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/8382566/crc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1159851258/TimeDelay.p1: ../../src_com/TimeDelay.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1159851258" 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/TimeDelay.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1159851258/TimeDelay.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib $(COMPARISON_BUILD)  --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s" --MSGDISABLE=336    -o${OBJECTDIR}/_ext/1159851258/TimeDelay.p1  ../../src_com/TimeDelay.c 
+	@-${MV} ${OBJECTDIR}/_ext/1159851258/TimeDelay.d ${OBJECTDIR}/_ext/1159851258/TimeDelay.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1159851258/TimeDelay.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+endif
+
+# ------------------------------------------------------------------------------------
+# Rules for buildStep: assemble
+ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+else
+endif
+
+# ------------------------------------------------------------------------------------
+# Rules for buildStep: link
+ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+dist/${CND_CONF}/${IMAGE_TYPE}/AFE.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
+	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
+	${MP_CC} $(MP_EXTRA_LD_PRE) --chip=$(MP_PROCESSOR_OPTION) -G -mdist/${CND_CONF}/${IMAGE_TYPE}/AFE.X.${IMAGE_TYPE}.map  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"     --rom=default,-3e00-3fff   $(COMPARISON_BUILD) --memorysummary dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -odist/${CND_CONF}/${IMAGE_TYPE}/AFE.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	@${RM} dist/${CND_CONF}/${IMAGE_TYPE}/AFE.X.${IMAGE_TYPE}.hex 
+	
+else
+dist/${CND_CONF}/${IMAGE_TYPE}/AFE.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
+	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
+	${MP_CC} $(MP_EXTRA_LD_PRE) --chip=$(MP_PROCESSOR_OPTION) -G -mdist/${CND_CONF}/${IMAGE_TYPE}/AFE.X.${IMAGE_TYPE}.map  --double=24 --float=24 --emi=wordwrite --opt=+asm,+asmfile,-speed,+space,-debug,-local --addrqual=ignore --mode=free -DDEBUGMONITOR -DSEND_UPSTREAM_DATA -DxMONTIOR_AUTODETECT -P -N255 -I"../../inc" -I"../../mcc_generated_files" -I"../../src_com" -I"../../src_app" -I"../../../Common" --warn=-3 --asmlist -DXPRJ_Release=$(CND_CONF)  --summary=default,-psect,-class,+mem,-hex,-file --MSGDISABLE=520,1498 --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,-plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"     $(COMPARISON_BUILD) --memorysummary dist/${CND_CONF}/${IMAGE_TYPE}/memoryfile.xml -odist/${CND_CONF}/${IMAGE_TYPE}/AFE.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	
+endif
+
+
+# Subprojects
+.build-subprojects:
+
+
+# Subprojects
+.clean-subprojects:
+
+# Clean Targets
+.clean-conf: ${CLEAN_SUBPROJECTS}
+	${RM} -r build/Release
+	${RM} -r dist/Release
+
+# Enable dependency checking
+.dep.inc: .depcheck-impl
+
+DEPFILES=$(shell "${PATH_TO_IDE_BIN}"mplabwildcard ${POSSIBLE_DEPFILES})
+ifneq (${DEPFILES},)
+include ${DEPFILES}
+endif

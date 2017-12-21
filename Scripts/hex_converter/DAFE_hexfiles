@@ -1,0 +1,9 @@
+#!/bin/sh
+echo "Building Water Pressure Sensor Hex File"
+python ../../../Scripts/hex_converter/DAFE-eeprom-patcher.py ../../proj/AFE.X/dist/Release/production/AFE.X.production.hex ../../proj/AFE.X/dist/Release/production/DAFE 1
+echo "Building Dendrometer Sensor Hex File"
+python ../../../Scripts/hex_converter/DAFE-eeprom-patcher.py ../../proj/AFE.X/dist/Release/production/AFE.X.production.hex ../../proj/AFE.X/dist/Release/production/DAFE 2
+echo "Building Infrared Radiometer Sensor Hex File"
+python ../../../Scripts/hex_converter/DAFE-eeprom-patcher.py ../../proj/AFE.X/dist/Release/production/AFE.X.production.hex ../../proj/AFE.X/dist/Release/production/DAFE 3
+echo "Building Bud/Leaf Frost Sensor Hex File"
+python ../../../Scripts/hex_converter/DAFE-eeprom-patcher.py ../../proj/AFE.X/dist/Release/production/AFE.X.production.hex ../../proj/AFE.X/dist/Release/production/DAFE 4

@@ -1,0 +1,23 @@
+ build/Release/production/_ext/1159853146/SendSensorData.d  \
+ build/Release/production/_ext/1159853146/SendSensorData.p1:  \
+ ../../src_app/SendSensorData.c  \
+../../mcc_generated_files/i2c.h  \
+../../mcc_generated_files/fvr.h  \
+../../src_app/PortDef.h  \
+../../mcc_generated_files/cmp2.h  \
+../../mcc_generated_files/mcc.h  \
+../../inc/ComTypeDefs.h  \
+../../src_com/TimeDelay.h  \
+../../inc/Versions.h  \
+../../mcc_generated_files/memory.h  \
+../../../Common/pixl_intfc.h  \
+../../src_app/SendSensorData.h  \
+../../mcc_generated_files/interrupt_manager.h  \
+../../src_com/NvmData.h  \
+../../mcc_generated_files/eusart.h  \
+../../mcc_generated_files/pin_manager.h  \
+../../src_app/tmr0.h  \
+../../src_app/Measure.h  \
+../../../Common/crc.h  \
+../../src_app/Temp.h  \
+../../src_app/Tick.h 

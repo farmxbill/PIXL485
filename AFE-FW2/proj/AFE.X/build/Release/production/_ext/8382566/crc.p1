@@ -1,0 +1,154 @@
+Version 3.2 HI-TECH Software Intermediate Code
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;crc.h: 17: extern uint8_t compute_crc8( uint8_t crc, void* data, uint16_t length );
+"82 ../../../Common/crc.c
+[v __crc8_update `(uc ~T0 @X0 1 sf2`uc`uc ]
+"83
+{
+[; ;crc.c: 82: static uint8_t _crc8_update(uint8_t crc, uint8_t data)
+[; ;crc.c: 83: {
+[e :U __crc8_update ]
+"82
+[v _crc `uc ~T0 @X0 1 r1 ]
+[v _data `uc ~T0 @X0 1 r2 ]
+"83
+[f ]
+"84
+[v _i `uc ~T0 @X0 1 a ]
+[; ;crc.c: 84: uint8_t i;
+[; ;crc.c: 85: data = (uint8_t)(crc ^ data);
+"85
+[e = _data -> ^ -> _crc `i -> _data `i `uc ]
+[; ;crc.c: 86: for ( i = 0; i < 8; i++ )
+"86
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 2  ]
+[e $U 3  ]
+"87
+[e :U 2 ]
+[; ;crc.c: 87: {
+{
+[; ;crc.c: 88: if (( data & 0x80 ) != 0 )
+"88
+[e $ ! != & -> _data `i -> 128 `i -> 0 `i 5  ]
+[; ;crc.c: 89: {
+"89
+{
+[; ;crc.c: 90: data <<= 1;
+"90
+[e =<< _data -> 1 `i ]
+[; ;crc.c: 91: data ^= 0x07;
+"91
+[e =^ _data -> -> 7 `i `uc ]
+"92
+}
+[; ;crc.c: 92: }
+[e $U 6  ]
+"93
+[e :U 5 ]
+[; ;crc.c: 93: else
+[; ;crc.c: 94: {
+"94
+{
+[; ;crc.c: 95: data <<= 1;
+"95
+[e =<< _data -> 1 `i ]
+"96
+}
+[e :U 6 ]
+"97
+}
+"86
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 2  ]
+[e :U 3 ]
+"97
+}
+[; ;crc.c: 96: }
+[; ;crc.c: 97: }
+[; ;crc.c: 98: return data;
+"98
+[e ) _data ]
+[e $UE 1  ]
+[; ;crc.c: 99: }
+"99
+[e :UE 1 ]
+}
+"114
+[v _compute_crc8 `(uc ~T0 @X0 1 ef3`uc`*v`ui ]
+"115
+{
+[; ;crc.c: 114: uint8_t compute_crc8( uint8_t crc, void* data, uint16_t length )
+[; ;crc.c: 115: {
+[e :U _compute_crc8 ]
+"114
+[v _crc `uc ~T0 @X0 1 r1 ]
+[v _data `*v ~T0 @X0 1 r2 ]
+[v _length `ui ~T0 @X0 1 r3 ]
+"115
+[f ]
+"116
+[v _i `ui ~T0 @X0 1 a ]
+"118
+[v __data `*uc ~T0 @X0 1 a ]
+[; ;crc.c: 116: uint16_t i;
+[; ;crc.c: 118: uint8_t* _data = (uint8_t*)data;
+[e = __data -> _data `*uc ]
+[; ;crc.c: 120: for (i = 0; i < length; i++)
+"120
+{
+[e = _i -> -> 0 `i `ui ]
+[e $U 11  ]
+"121
+[e :U 8 ]
+[; ;crc.c: 121: {
+{
+[; ;crc.c: 122: crc = _crc8_update(crc, _data[i]);
+"122
+[e = _crc ( __crc8_update (2 , _crc *U + __data * -> _i `ux -> -> # *U __data `ui `ux ]
+"123
+}
+"120
+[e ++ _i -> -> 1 `i `ui ]
+[e :U 11 ]
+[e $ < _i _length 8  ]
+[e :U 9 ]
+"123
+}
+[; ;crc.c: 123: }
+[; ;crc.c: 124: return crc;
+"124
+[e ) _crc ]
+[e $UE 7  ]
+[; ;crc.c: 125: }
+"125
+[e :UE 7 ]
+}
